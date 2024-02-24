@@ -1,11 +1,24 @@
 import { updateData } from '../const'
 
-export function searchQueries(userName:string) {
+export function searchQueries(userName: string) {
     const queries: string[] = [
-        `"${userName}" OR "${userName}"`,
-        `"${userName}" -"LinkedIn"`,
+        `"${userName}"`,
+        `"${userName}" -site:linkedin.com`,
         `related:"${userName}"`,
-        ];
+        `"${userName}" + "contact information" | "email address" | "phone number"`,
+        `"${userName}" site:linkedin.com | site:facebook.com | site:twitter.com`,
+        `"${userName}" + "resume" | "CV" | "professional experience" filetype:pdf`,
+        `"${userName}" + "articles" | "publications" filetype:pdf | site:scholar.google.com`,
+        `"${userName}" + "interview" | "podcast" | "webinar"`,
+        `"${userName}" + "legal documents" | "court case" | "patent"`,
+        `"${userName}" + "university" | "thesis" | "dissertation"`,
+        `"${userName}" site:reddit.com | site:quora.com`,
+        `"${userName}" + "photos" | "videos"`,
+        `"${userName}" + "startup" | "business venture" | "company founder"`,
+        `"${userName}" + "personal blog" | "website"`,
+        `"${userName}" + "property holdings" | "real estate"`,
+        `filetype:pdf "${userName}"`
+    ];
     return queries;
 }
 
